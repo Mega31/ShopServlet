@@ -17,11 +17,16 @@ public class HelloServlet extends HttpServlet {
     private Hashing hashing = new Hashing();
     private Authentication authentication = new Authentication(hashing);
 
+
+
     //constructor
 
 
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
+
         String Usrname = req.getParameter("Username");
         String Pasword = req.getParameter("Password");
         try {
@@ -34,7 +39,7 @@ public class HelloServlet extends HttpServlet {
 
                 // build HTML code
                 String htmlResp = "<html>";
-                htmlResp += "<h2>Internal error <br/>";
+                htmlResp += "<h2>incorrect pass <br/>";
 
                 htmlResp += "</html>";
 
@@ -42,16 +47,7 @@ public class HelloServlet extends HttpServlet {
                 writer.println(htmlResp);
             }
         } catch (NoSuchAlgorithmException e) {
-            PrintWriter writer = resp.getWriter();
 
-            // build HTML code
-            String htmlRespone = "<html>";
-            htmlRespone += "<h2>Your username or password incorrect <br/>";
-
-            htmlRespone += "</html>";
-
-            // return response
-            writer.println(htmlRespone);
         }
     }
 }
