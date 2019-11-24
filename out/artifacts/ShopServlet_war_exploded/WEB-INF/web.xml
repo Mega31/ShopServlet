@@ -9,7 +9,7 @@
 </resource-env-ref>
     <servlet>
         <servlet-name>ShopServlet</servlet-name>
-        <servlet-class>com.shop.in.controller.HelloServlet</servlet-class>
+        <servlet-class>com.shop.in.controller.AuthController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ShopServlet</servlet-name>
