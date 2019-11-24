@@ -3,18 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-
+    <resource-env-ref>
+    <resource-env-ref-name>BeanManager</resource-env-ref-name>
+    <resource-env-ref-type>javax.enterprise.inject.spi.BeanManager</resource-env-ref-type>
+</resource-env-ref>
     <servlet>
         <servlet-name>ShopServlet</servlet-name>
         <servlet-class>com.shop.in.controller.HelloServlet</servlet-class>
-        <init-param>
-            <param-name>resources</param-name>
-            <param-value>resources/</param-value>
-        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>ShopServlet</servlet-name>
         <url-pattern>/</url-pattern>
-
     </servlet-mapping>
+
 </web-app>
