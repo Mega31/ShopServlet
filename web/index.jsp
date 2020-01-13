@@ -22,5 +22,6 @@
       <input type="submit" value="login">
     </form>
   </div>
+  <p>New to website signup <a href="Reg.jsp">here</a></p>
   </body>
 </html>
