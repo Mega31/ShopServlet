@@ -15,8 +15,6 @@
 
     </properties>
     <dependencies>
-
-
         <dependency>
             <groupId>javax.enterprise</groupId>
             <artifactId>cdi-api</artifactId>
@@ -26,6 +24,12 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.2.9</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>3.2.3</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -37,7 +41,6 @@
             <artifactId>javax.inject</artifactId>
             <version>1</version>
         </dependency>
-
     </dependencies>
 
 

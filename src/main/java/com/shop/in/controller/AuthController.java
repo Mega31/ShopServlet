@@ -1,19 +1,15 @@
 package com.shop.in.controller;
 
-import com.shop.in.interfaces.Auth;
 import com.shop.in.model.AuthenticationBean;
 import com.shop.in.model.DBbean;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebListener;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
 
