@@ -3,6 +3,7 @@ package com.shop.in.model;
 import javax.enterprise.context.RequestScoped;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @RequestScoped
@@ -17,8 +18,9 @@ public class ReadingBean {
         BufferedReader fruitReader = new BufferedReader(resourceStream);
         fruitList = new ArrayList<String>();
         while ((fruits = fruitReader.readLine()) != null){
-            fruitList.add(fruits);
+            fruitList.add(Arrays.toString(fruits.split(",")));
         }
+        System.out.println(fruitList.get(0));
         return fruitList;
     }
     public  List<String> vegReader()throws  IOException{

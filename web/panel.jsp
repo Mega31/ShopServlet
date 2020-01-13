@@ -1,4 +1,5 @@
-<%@ page import="java.util.ArrayList" %><%--
+<%@ page import="java.util.ArrayList" %>
+<%--
   Created by IntelliJ IDEA.
   User: freeze
   Date: 11/19/19
@@ -11,7 +12,8 @@
     <title></title>
 </head>
 <body>
-<% ArrayList<String> fruitList = (ArrayList<String>) request.getAttribute("fruitList"); %>
-<p><%System.out.println(fruitList);%></p>
+<%  String Fruit = (String) request.getAttribute("Fruits");
+    System.out.print(Fruit);%>
+<p>fruit  :   </p>
 </body>
 </html>

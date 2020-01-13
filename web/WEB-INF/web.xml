@@ -11,9 +11,17 @@
         <servlet-name>ShopServlet</servlet-name>
         <servlet-class>com.shop.in.controller.AuthController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ShopServletPanel</servlet-name>
+       <servlet-class>com.shop.in.controller.PanelController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ShopServlet</servlet-name>
         <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShopServletPanel</servlet-name>
+        <url-pattern>/pa</url-pattern>
     </servlet-mapping>
 
 </web-app>

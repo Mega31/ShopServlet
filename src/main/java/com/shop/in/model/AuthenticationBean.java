@@ -9,30 +9,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.sql.*;
 
 @RequestScoped
-public class AuthenticationBean implements Auth {
-public AuthenticationBean(){
-
-}
+public class AuthenticationBean  {
+    @Inject private DBbean dBbean;
    @Inject private HashBean hashing;
     private BufferedReader userReader,passReader;
-    private  static final String PASSWD_PATH = "/passwd.txt";
-    private  static final String USER_NAME_PATH = "/userName.txt";
-    private  String user,passwd;
-    private List<String> userList ,passList,gUser,gPass ;
+   // private  static final String PASSWD_PATH = "/passwd.txt";
+    //private  static final String USER_NAME_PATH = "/userName.txt";
+    //private  String user,passwd;
+    //private List<String> userList ,passList,gUser,gPass ;
     private Map<String,String> hashMap = new HashMap<String,String>();
-
-
-
-
-
-    @Override
-    public boolean authentication (String userId,String pass ) throws IOException, NoSuchAlgorithmException {
+   // @Override
+   /* public boolean authentication (String userId,String pass ) throws IOException, NoSuchAlgorithmException {
         InputStream userStream = AuthenticationBean.class.getResourceAsStream(USER_NAME_PATH);
         InputStream passStream = AuthenticationBean.class.getResourceAsStream(PASSWD_PATH);
         InputStreamReader userStreamReader = new InputStreamReader(userStream);
@@ -63,6 +54,28 @@ public AuthenticationBean(){
         passReader.close();
         return false;
 
+    }
+    */
+    public boolean auth2(String userName,String pass) throws ClassNotFoundException, SQLException {
+       Connection DBconnection = dBbean.driverInitilization();
+       Statement createSmt= DBconnection.createStatement();
+       ResultSet query = createSmt.executeQuery("SELECT * FROM customerdata.customer_data ");
+       while (query.next()){
+           String uName = query.getString("username");
+           String uPass = query.getString("password");
+           hashMap.put( uName,uPass);
+       }
+        boolean checkPass= hashMap.containsValue(pass);
+        boolean checkUser = hashMap.containsKey(userName);
+        if (checkPass && checkUser ){
+            System.out.println("success");
+            return true;
+        }
+        DBconnection.close();
+        createSmt.close();
+        query.close();
+
+        return false;
     }
 
 
