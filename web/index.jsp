@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="login.css">
   <div style="text-align:center" >
 
-    <form action ="panel" method="post" id="div" >
+    <form action="login" method="post" id="div" >
       Username:<br>
       <input type="text" name="Username"><br>
       Password:<br>
@@ -22,6 +22,6 @@
       <input type="submit" value="login">
     </form>
   </div>
-  <p>New to website signup <a href="Reg.jsp">here</a></p>
+  <p>New to website signup <a href="${pageContext.request.contextPath}/Reg";>here</a></p>
   </body>
 </html>

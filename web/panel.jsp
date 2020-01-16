@@ -12,8 +12,8 @@
     <title></title>
 </head>
 <body>
-<%  String Fruit = (String) request.getAttribute("Fruits");
-    System.out.print(Fruit);%>
+//<%  String Fruit = (String) request.getAttribute("Fruits");
+ //   System.out.print(Fruit);%>
 <p>fruit  :   </p>
 </body>
 </html>
